@@ -1,0 +1,24 @@
+<p>Nombre del empleado: {{nombre}}</p>
+<p>Apellido del empleado: {{apellido}}</p>
+<p>
+    Edad del empleado: {{(getEdad()<18) ? 'Menor de edad' : 'Mayor de edad'}}
+</p>
+<p>Empresa del empleado: {{empresa}}</p>
+<!-- <p>Empresa del empleado: {{empresa.value}}</p> -->
+
+<!-- <p>Introduce la empresa:</p>
+<input type="text" #empresa (keyup)="0" [disabled]="enableInput"> -->
+<p>Introduce la empresa:</p>
+<input type="text" [(ngModel)]="empresa">
+<br>
+<br>
+{{textOfRegistered}}
+<br>
+<p>Registrado:</p>
+<input type="radio" name="nRegistro" id="registro" value="si" [checked]="userRegistered" (click)="setUserRegistered($event)">
+<p>No Registrado:</p>
+<input type="radio" name="nRegistro" value="no" (click)="setUserRegistered($event)">
+
+{{getuserRegistered()}}
+<!-- con el boton toca darle, pero queremos que siempre que haya un cambio se muestre directamente sin necesidad de pulsarlo -->
+<!-- <input type="button" value="Dale!" (click)="llamaEmpresa(empresa.value)"> -->
